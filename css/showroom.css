@@ -1,0 +1,177 @@
+/* Fluid / responsive - shared building blocks (nav pill, footer) */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+html{
+    -webkit-text-size-adjust: 100%;
+}
+body{
+    margin: 0px;
+}
+img{
+    max-width: 100%;
+}
+nav a{
+    color: rgb(35, 247, 35);
+    padding: 8px;
+    white-space: nowrap;
+}
+nav{
+    position: fixed;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .25rem .5rem;
+    width: min(92%, 720px);
+    padding: 14px 20px;
+    background-color: rgba(0, 0, 0, 0.747);
+    border-radius: 500px;
+    text-align: center;
+}
+.landing a{
+    text-decoration: none;
+    border-radius: 10px;
+}
+.landing a:hover{
+    background-color: rgb(34, 247, 34);
+    color: black;
+}
+
+/* hero banner */
+.landing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 300px;
+    padding: 110px clamp(1rem, 34vw, 500px) 1.5rem 1rem;
+    text-align: right;
+    background-image: url(../image/bed-table.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.landing h1{
+    margin: 0;
+    font-size: clamp(2.2rem, 9vw, 4.4rem);
+    color: rgb(0, 194, 0);
+}
+.landing h4{
+    margin: .25rem 0 0;
+    color: rgb(0, 194, 0);
+    font-size: larger;
+}
+            /*end of the landing page*/
+
+/* section headings */
+.designs,
+.header2 h1,
+.header3 h1{
+    display: block;
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    margin: 2rem auto 1rem;
+    text-align: center;
+    color: rgb(6, 188, 6);
+    border-bottom: 10px solid black;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+/* product rows: cards wrap and stay centred at every width */
+.plaindesigns,
+.products2,
+.products3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+.plaindesigns > div,
+.products2 > div,
+.products3 > div{
+    flex: 0 1 340px;
+    min-width: 0;
+    max-width: 100%;
+    padding: 15px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+.plaindesigns img,
+.products2 img,
+.products3 img{
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.plaindesigns p,
+.products2 p,
+.products3 p{
+    margin: .6rem 0;
+}
+.plaindesigns button,
+.products2 button,
+.products3 button{
+    background-color: green;
+    border: 1px solid green;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.plaindesigns button:hover,
+.products2 button:hover,
+.products3 button:hover{
+    background-color: transparent;
+}
+.products2,
+.products3{
+    margin-top: 20px;
+}
+                    /*this is the end of the body*/
+footer{
+    background-color: black;
+    color: rgb(41, 214, 41);
+    min-height: 300px;
+    margin-top: 20px;
+    padding-bottom: 1.5rem;
+}
+footer p{
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(41, 212, 41);
+    text-align: center;
+}
+footer ul{
+    margin: 0;
+    padding: 1rem 1rem 0 3rem;
+}
+
+@media (max-width: 1024px){
+    /* fixed backgrounds are janky on touch devices */
+    .landing{
+        background-attachment: scroll;
+    }
+}
+@media (max-width: 700px){
+    .landing{
+        align-items: center;
+        padding: 130px 1rem 1.5rem;
+        text-align: center;
+    }
+}
+@media (max-width: 480px){
+    nav a{
+        padding: 6px;
+        font-size: .85rem;
+    }
+    nav{
+        padding: 12px 14px;
+        border-radius: 28px;
+    }
+}

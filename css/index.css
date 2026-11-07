@@ -1,0 +1,179 @@
+/* Fluid / responsive - shared building blocks (nav pill, footer) */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+html{
+    -webkit-text-size-adjust: 100%;
+}
+body{
+    margin: 0px;
+}
+img{
+    max-width: 100%;
+}
+nav a{
+    color: rgb(20, 239, 20);
+    padding: 8px;
+    white-space: nowrap;
+}
+nav{
+    position: fixed;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .25rem .5rem;
+    width: min(92%, 720px);
+    padding: 14px 20px;
+    background-color: rgba(0, 0, 0, 0.747);
+    border-radius: 500px;
+    text-align: center;
+}
+.landing a{
+    text-decoration: none;
+    border-radius: 10px;
+}
+.landing a:hover{
+    background-color: rgb(26, 229, 26);
+    color: black;
+}
+
+/* landing page */
+.landing{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 600px;
+    padding: 120px clamp(1rem, 31vw, 450px) 3rem 1rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(../image/product-jpeg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.landinginner{
+    color: azure;
+    font-size: xx-large;
+}
+.landinginner h1{
+    margin: 0 0 .5rem;
+    font-size: clamp(2.2rem, 7vw, 4rem);
+}
+.landinginner h4{
+    margin: 0 0 1.5rem;
+    font-size: large;
+}
+.btns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.landinginner button{
+    background-color: rgba(27, 245, 27, 0.799);
+    color: black;
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 0px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.landinginner button:hover{
+    background-color: transparent;
+    border: 1px solid rgb(26, 247, 26);
+    color: azure;
+}
+                         /*end of landing page*/
+.first-heading{
+    text-align: center;
+    color: rgb(6, 188, 6);
+    border-bottom: 10px solid black;
+    display: inline;
+    font-size: clamp(1.6rem, 5vw, 2rem);
+}
+.display{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 1.25rem;
+    max-width: 1280px;
+    margin: 10px auto 0;
+    padding: 0 clamp(1rem, 4vw, 3rem);
+}
+.display > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding-bottom: 1.25rem;
+}
+.display img{
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 7 / 6;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.display p{
+    flex: 1;
+    margin: 1rem;
+}
+.display button{
+    background-color: transparent;
+    border: 1px solid green;
+    padding: 11px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.display button:hover{
+    background-color: green;
+    color: azure;
+}
+                    /*this is the end of the body*/
+footer{
+    background-color: black;
+    color: rgb(41, 214, 41);
+    min-height: 300px;
+    margin-top: 20px;
+    padding-bottom: 1.5rem;
+}
+footer p{
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(41, 212, 41);
+    text-align: center;
+}
+footer ul{
+    margin: 0;
+    padding: 1rem 1rem 0 3rem;
+}
+
+@media (max-width: 1024px){
+    .landing{
+        padding-right: clamp(1rem, 12vw, 6rem);
+    }
+}
+@media (max-width: 700px){
+    .landing{
+        justify-content: center;
+        min-height: 520px;
+        padding: 130px 1rem 2rem;
+        text-align: center;
+    }
+    .btns{
+        justify-content: center;
+    }
+}
+@media (max-width: 480px){
+    nav a{
+        padding: 6px;
+        font-size: .85rem;
+    }
+    nav{
+        padding: 12px 14px;
+        border-radius: 28px;
+    }
+}
